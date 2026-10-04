@@ -1,0 +1,44 @@
+body {
+  width: 360px;
+  margin: 0;
+  background: var(--surface);
+}
+
+.popup-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4);
+}
+
+.logo {
+  flex: none;
+  width: 34px;
+  height: 34px;
+}
+
+.popup-names {
+  flex: 1;
+}
+
+.popup-names h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  line-height: var(--leading-tight);
+}
+
+.popup-names p {
+  margin: 2px 0 0;
+  color: var(--ink-soft);
+  font-size: var(--text-xs);
+}
+
+.popup-footer {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--ink-soft);
+  font-size: var(--text-xs);
+}

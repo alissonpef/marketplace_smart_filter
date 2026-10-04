@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Opções do Marketplace Smart Filter</title>
+    <link rel="stylesheet" href="../ui/tokens.css" />
+    <link rel="stylesheet" href="../ui/components.css" />
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body class="ui-root" data-theme="auto">
+    <main class="page">
+      <header class="page-header">
+        <h1>Opções</h1>
+        <p>As mudanças são salvas sozinhas. Recarregue a aba do Marketplace para aplicá-las.</p>
+      </header>
+
+      <section class="ui-section">
+        <h2 class="ui-heading">Sinônimos</h2>
+        <p class="ui-hint">
+          Uma linha por grupo, com as palavras separadas por <code class="ui-kbd">=</code>. Com
+          "notebook = laptop", buscar notebook também encontra laptop.
+        </p>
+        <textarea
+          class="ui-textarea"
+          data-setting="synonymsText"
+          spellcheck="false"
+          aria-label="Sinônimos"
+          placeholder="notebook = laptop"
+        ></textarea>
+        <div class="actions">
+          <button type="button" class="ui-button" id="reset-synonyms">Restaurar o padrão</button>
+        </div>
+      </section>
+
+      <section class="ui-section">
+        <h2 class="ui-heading">Palavras de acessório</h2>
+        <p class="ui-hint">
+          Anúncios com essas palavras no título escurecem, a menos que você busque a própria
+          palavra. Separe por vírgula ou por linha.
+        </p>
+        <textarea
+          class="ui-textarea"
+          data-setting="accessoryText"
+          spellcheck="false"
+          aria-label="Palavras de acessório"
+          placeholder="capa, película, carregador"
+        ></textarea>
+        <div class="actions">
+          <button type="button" class="ui-button" id="reset-accessories">Restaurar o padrão</button>
+        </div>
+      </section>
+
+      <section class="ui-section">
+        <h2 class="ui-heading">Atalho de teclado</h2>
+        <p class="ui-hint">
+          Liga e desliga o filtro. O padrão é <kbd class="ui-kbd">Alt+Shift+F</kbd>.
+        </p>
+        <div class="actions">
+          <button type="button" class="ui-button" id="open-shortcuts">Alterar atalho</button>
+        </div>
+      </section>
+
+      <section class="ui-section">
+        <h2 class="ui-heading">Seus dados</h2>
+        <p class="ui-hint">Tudo fica guardado só neste navegador.</p>
+        <div class="list" id="data"></div>
+      </section>
+
+      <section class="ui-section">
+        <h2 class="ui-heading">Ajustes por busca</h2>
+        <p class="ui-hint">Você cria esses ajustes no painel da página, em "Só nesta busca".</p>
+        <div class="list" id="profiles"></div>
+      </section>
+    </main>
+
+    <script src="../src/core/defaults.js"></script>
+    <script src="../ui/bind.js"></script>
+    <script src="options.js"></script>
+  </body>
+</html>

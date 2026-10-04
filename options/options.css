@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+  background: var(--paper);
+}
+
+.page {
+  max-width: 660px;
+  margin: var(--space-5) auto;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-surface);
+  background: var(--surface);
+}
+
+.page-header {
+  padding: var(--space-5) var(--space-5) var(--space-4);
+}
+
+.page-header h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: var(--leading-tight);
+}
+
+.page-header p {
+  margin: var(--space-2) 0 0;
+  color: var(--ink-soft);
+}
+
+.page .ui-section {
+  padding: var(--space-4) var(--space-5);
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.list .ui-row {
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.list .ui-row:last-child {
+  border-bottom: 0;
+}
+
+.empty {
+  margin: 0;
+  color: var(--ink-soft);
+}

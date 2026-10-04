@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Marketplace Smart Filter</title>
+    <link rel="stylesheet" href="../ui/tokens.css" />
+    <link rel="stylesheet" href="../ui/components.css" />
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body class="ui-root" data-theme="auto">
+    <header class="popup-header">
+      <svg class="logo" viewBox="0 0 24 24" aria-hidden="true">
+        <rect width="24" height="24" rx="6" fill="#0f766e" />
+        <path d="M4.5 12L9 6.5h10.5v11H9z" fill="#fff" />
+        <circle cx="9.4" cy="12" r="1.3" fill="#0f766e" />
+        <path
+          d="M12.6 12.2l1.9 1.9 3.5-3.9"
+          fill="none"
+          stroke="#0f766e"
+          stroke-width="1.7"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+      <div class="popup-names">
+        <h1>Smart Filter</h1>
+        <p>Facebook Marketplace</p>
+      </div>
+      <button
+        type="button"
+        class="ui-switch"
+        role="switch"
+        data-setting="enabled"
+        aria-label="Ligar ou desligar o filtro"
+      >
+        <span></span>
+      </button>
+    </header>
+
+    <main>
+      <section class="ui-section">
+        <h2 class="ui-heading">O que combina</h2>
+        <div class="ui-row">
+          <span class="ui-label">Filtrar acessórios</span
+          ><button
+            type="button"
+            class="ui-switch"
+            role="switch"
+            data-setting="filterAccessories"
+            aria-label="Filtrar acessórios"
+          >
+            <span></span>
+          </button>
+        </div>
+        <p class="ui-hint">Capas, películas, carregadores e cabos ficam de fora.</p>
+        <div class="ui-field">
+          <span class="ui-label">Rigidez da busca</span>
+          <div
+            class="ui-seg"
+            role="radiogroup"
+            data-setting="matchMode"
+            aria-label="Rigidez da busca"
+          >
+            <button type="button" role="radio" data-value="all">Estrita</button>
+            <button type="button" role="radio" data-value="smart">Inteligente</button>
+          </div>
+          <p class="ui-hint">
+            Estrita exige todas as palavras. Inteligente exige só o modelo e aceita variações do
+            resto.
+          </p>
+        </div>
+        <div class="ui-row">
+          <span class="ui-label">Tolerar erro de digitação</span
+          ><button
+            type="button"
+            class="ui-switch"
+            role="switch"
+            data-setting="fuzzy"
+            aria-label="Tolerar erro de digitação"
+          >
+            <span></span>
+          </button>
+        </div>
+        <div class="ui-field">
+          <label class="ui-label" for="exclude">Palavras a excluir</label>
+          <input
+            id="exclude"
+            class="ui-input"
+            type="text"
+            data-setting="excludeWords"
+            placeholder="defeito, quebrado, peças"
+          />
+        </div>
+      </section>
+
+      <section class="ui-section">
+        <h2 class="ui-heading">Análise</h2>
+        <div class="ui-row">
+          <span class="ui-label">Ler a descrição dos anúncios</span
+          ><button
+            type="button"
+            class="ui-switch"
+            role="switch"
+            data-setting="searchDescriptions"
+            aria-label="Ler a descrição dos anúncios"
+          >
+            <span></span>
+          </button>
+        </div>
+        <p class="ui-hint">Mais lento: abre os anúncios em segundo plano, um por vez.</p>
+        <div class="ui-row">
+          <span class="ui-label">Alertar preço suspeito</span
+          ><button
+            type="button"
+            class="ui-switch"
+            role="switch"
+            data-setting="flagLowPrice"
+            aria-label="Alertar preço suspeito"
+          >
+            <span></span>
+          </button>
+        </div>
+        <div class="ui-row">
+          <span class="ui-label">Marcar anúncios novos</span
+          ><button
+            type="button"
+            class="ui-switch"
+            role="switch"
+            data-setting="markNew"
+            aria-label="Marcar anúncios novos"
+          >
+            <span></span>
+          </button>
+        </div>
+        <div class="ui-row">
+          <span class="ui-label">Esmaecer anúncios já abertos</span
+          ><button
+            type="button"
+            class="ui-switch"
+            role="switch"
+            data-setting="dimSeen"
+            aria-label="Esmaecer anúncios já abertos"
+          >
+            <span></span>
+          </button>
+        </div>
+      </section>
+
+      <section class="ui-section">
+        <h2 class="ui-heading">Aparência</h2>
+        <div class="ui-field">
+          <span class="ui-label">Anúncios que não combinam</span>
+          <div
+            class="ui-seg"
+            role="radiogroup"
+            data-setting="action"
+            aria-label="Anúncios que não combinam"
+          >
+            <button type="button" role="radio" data-value="dim">Escurecer</button>
+            <button type="button" role="radio" data-value="hide">Esconder</button>
+          </div>
+        </div>
+        <div class="ui-row">
+          <span class="ui-label">Etiquetas nos anúncios</span
+          ><button
+            type="button"
+            class="ui-switch"
+            role="switch"
+            data-setting="highlightGood"
+            aria-label="Etiquetas nos anúncios"
+          >
+            <span></span>
+          </button>
+        </div>
+        <div class="ui-row">
+          <span class="ui-label">Realçar termos no título</span
+          ><button
+            type="button"
+            class="ui-switch"
+            role="switch"
+            data-setting="highlightTerms"
+            aria-label="Realçar termos no título"
+          >
+            <span></span>
+          </button>
+        </div>
+        <div class="ui-row">
+          <span class="ui-label">Painel na página</span
+          ><button
+            type="button"
+            class="ui-switch"
+            role="switch"
+            data-setting="showPanel"
+            aria-label="Painel na página"
+          >
+            <span></span>
+          </button>
+        </div>
+        <div class="ui-field">
+          <span class="ui-label">Tema</span>
+          <div class="ui-seg" role="radiogroup" data-setting="theme" aria-label="Tema">
+            <button type="button" role="radio" data-value="auto">Automático</button>
+            <button type="button" role="radio" data-value="light">Claro</button>
+            <button type="button" role="radio" data-value="dark">Escuro</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="ui-section popup-footer">
+      <button type="button" class="ui-link" id="open-options">Mais opções</button>
+      <span>Atalho <kbd class="ui-kbd">Alt+Shift+F</kbd></span>
+      <span id="version"></span>
+    </footer>
+
+    <script src="../src/core/defaults.js"></script>
+    <script src="../ui/bind.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>
