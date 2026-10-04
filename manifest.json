@@ -1,0 +1,74 @@
+{
+  "manifest_version": 3,
+  "name": "Marketplace Smart Filter",
+  "version": "2.1.0",
+  "description": "Filtra o Marketplace do Facebook: mostra só o que combina com a sua busca, marca novos anúncios e alerta preços suspeitos.",
+  "minimum_chrome_version": "105",
+  "permissions": ["storage"],
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Marketplace Smart Filter",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": true
+  },
+  "commands": {
+    "toggle-filter": {
+      "suggested_key": {
+        "default": "Alt+Shift+F"
+      },
+      "description": "Ligar/desligar o filtro"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["ui/tokens.css", "ui/components.css", "ui/panel.css"],
+      "matches": [
+        "https://www.facebook.com/*",
+        "https://facebook.com/*",
+        "https://web.facebook.com/*"
+      ]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.facebook.com/marketplace/*",
+        "https://facebook.com/marketplace/*",
+        "https://web.facebook.com/marketplace/*"
+      ],
+      "js": [
+        "src/core/defaults.js",
+        "src/core/matcher.js",
+        "src/core/price.js",
+        "src/core/history.js",
+        "src/descriptions/parser.js",
+        "src/descriptions/cache.js",
+        "src/descriptions/fetcher.js",
+        "src/content/dom.js",
+        "src/content/visits.js",
+        "src/content/sorter.js",
+        "src/content/theme.js",
+        "src/content/highlight.js",
+        "src/content/panel.js",
+        "src/content/main.js"
+      ],
+      "css": ["src/content/content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
