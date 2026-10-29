@@ -2,3 +2,9 @@ node_modules/
 *.zip
 .DS_Store
 Thumbs.db
+
+# Agents & Prompts (local workflows)
+.agents/
+AGENTS.md
+agents.md
+docs/agents.md
